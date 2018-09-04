@@ -1,0 +1,88 @@
+@import "../Variables.scss";
+
+.button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border         : none;
+  display        : inline-block;
+  text-decoration: none;
+  color          : inherit;
+  padding        : 10px 20px;
+  background     : $buttons-color;
+  color          : $buttons-text;
+  cursor         : pointer;
+
+  &.button-small {
+    padding: 5px 10px;
+  }
+
+  &.button-big {
+    padding: 20px 40px;
+  }
+
+  &.action {
+    background: $button-action;
+  }
+}
+
+.round-button {
+  width          : 70px;
+  height         : 70px;
+  line-height    : 70px;
+  font-size      : 1.2em;
+  display        : block;
+  border-radius  : 50%;
+  text-decoration: none;
+  text-align     : center;
+  position       : relative;
+  background     : $buttons-color;
+
+  &.fixed {
+    position: fixed;
+    bottom  : 20px;
+    right   : 20px;
+  }
+
+  &:after {
+    content    : '+';
+    font-size  : 2em;
+    font-weight: 300;
+    display    : block;
+    color      : $buttons-text;
+    @include transition;
+  }
+
+  span {
+    background-color: rgba(59,59,59,1.00);
+    color           : $buttons-text;
+    padding         : 10px;
+    display         : inline-block;
+    position        : absolute;
+    top             : -60px;
+    right           : 0;
+    opacity         : 0;
+    white-space     : nowrap;
+    width           : auto;
+    height          : auto;
+    font-size       : 0.8em;
+    line-height     : normal;
+    @include transition;
+  }
+
+  &:hover:after {
+    transform: rotate(90deg);
+    @include transition;
+  }
+
+  &:hover span {
+    opacity: 1;
+    top    : -50px;
+    @include transition;
+  }
+
+  &.action {
+    background: $button-action;
+  }
+}

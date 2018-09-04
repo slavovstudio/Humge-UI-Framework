@@ -1,0 +1,21 @@
+@for $i from 1 through 50 {
+  .pad-#{$i*5} {
+    padding: $i * 5px;
+  }
+
+  .pad-left-#{$i*5} {
+    padding-left: $i * 5px;
+  }
+
+  .pad-right-#{$i*5} {
+    padding-right: $i * 5px;
+  }
+
+  .pad-top-#{$i*5} {
+    padding-top: $i * 5px;
+  }
+
+  .pad-bottom-#{$i*5} {
+    padding-bottom: $i * 5px;
+  }
+}

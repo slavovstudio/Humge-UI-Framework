@@ -1,0 +1,34 @@
+$wraper-max: 1440px;
+$wraper-min: 960px;
+$wraper: 80%;
+$fontsize: 1em;
+$grid-gutter: 3%;
+$form-controls-background: #fff;
+$form-control-focus-line: #960000;
+$buttons-color: #3a59a4;
+$buttons-text: #fff;
+$button-action: #cc2b12;
+$pagination-text: #fff;
+$pagination-color: #656565;
+$pagination-disabled: #c2c2c2;
+$pagination-active: #000000;
+$accordion-text: #000;
+$accordion-dt: #cbcbcb;
+$accordion-dt-active: #777777;
+$accordion-dd: #fff;
+$tabs-text: #000;
+$tabs-current: #dedede;
+$tabs-text-current: #000;
+$tabs-content: #fff;
+$shadow-color: rgba(0,0,0,0.20);
+$slider-dots: #ffffff;
+$slider-dots-active: #f60000;
+$slider-loadbar: #ff0000;
+$slider-img-info: rgba(0, 0, 0, 0.37);
+$slider-img-info-text: #fff;
+@mixin transition {
+  -o-transition     : all 0.3s ease;
+  -moz-transition   : all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition        : all 0.3s ease;
+}

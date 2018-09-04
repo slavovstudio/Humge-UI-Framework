@@ -1,0 +1,27 @@
+@import "../Variables.scss";
+
+dl[humge-type=accordion] {
+  color: $accordion-text;
+
+  dt {
+    display         : block;
+    background-color: $accordion-dt;
+    padding         : 10px 20px;
+    cursor          : pointer;
+
+    &.active {
+      background-color: $accordion-dt-active;
+    }
+  }
+
+  dd {
+    display         : block;
+    background-color: $accordion-dd;
+    overflow        : hidden;
+
+    &.open {
+      display : block;
+      overflow: inherit;
+    }
+  }
+}

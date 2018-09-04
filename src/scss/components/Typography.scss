@@ -1,0 +1,84 @@
+@import "../Variables.scss";
+
+.thin {
+  font-weight: 100;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: ($fontsize * 2.4) - ($i * 0.2);
+  }
+}
+
+.allcaps {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.nodecor {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+$s: 9;
+$f: 1;
+@for $s from 0 through 9 {
+  .font#{$f}#{$s} {
+    font-size: $fontsize + ($s/10);
+  }
+  $s: $s - 1;
+}
+$s: 9;
+$f: 2;
+@for $s from 0 through 9 {
+  .font#{$f}#{$s} {
+    font-size: ($f * $fontsize) + ($s/10);
+  }
+  $s: $s - 1;
+}
+$s: 9;
+$f: 3;
+@for $s from 0 through 9 {
+  .font#{$f}#{$s} {
+    font-size: ($f * $fontsize) + ($s/10);
+  }
+  $s: $s - 1;
+}
+@for $lh from 1 through 50 {
+  .lh#{$lh*5} {
+    line-height: #{$lh*5}px;
+  }
+}

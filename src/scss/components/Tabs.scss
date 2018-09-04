@@ -1,0 +1,32 @@
+@import "../Variables.scss";
+
+ul {
+  &.tabs {
+    margin    : 0;
+    padding   : 0;
+    list-style: none;
+
+    li {
+      background: none;
+      color     : $tabs-text;
+      display   : inline-block;
+      padding   : 10px 15px;
+      cursor    : pointer;
+
+      &.current {
+        background: $tabs-current;
+        color     : $tabs-text-current;
+      }
+    }
+  }
+}
+
+.tab-content {
+  display   : none;
+  background: $tabs-content;
+  padding   : 15px;
+
+  &.current {
+    display: inherit;
+  }
+}

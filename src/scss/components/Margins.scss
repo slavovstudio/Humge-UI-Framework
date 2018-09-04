@@ -1,0 +1,26 @@
+@for $i from 1 through 100 {
+  .mrg-#{$i*5} {
+    margin: $i * 5px;
+  }
+
+  .mrg-left-#{$i*5} {
+    margin-left: $i * 5px;
+  }
+
+  .mrg-right-#{$i*5} {
+    margin-right: $i * 5px;
+  }
+
+  .mrg-top-#{$i*5} {
+    margin-top: $i * 5px;
+  }
+
+  .mrg-bottom-#{$i*5} {
+    margin-bottom: $i * 5px;
+  }
+}
+
+.mrg-auto {
+  margin-left : auto;
+  margin-right: auto;
+}

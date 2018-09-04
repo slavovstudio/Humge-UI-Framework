@@ -1,0 +1,51 @@
+@import "Variables.scss";
+
+.inline {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.mrg-auto {
+  margin-left : auto;
+  margin-right: auto;
+}
+
+.v-center {
+  vertical-align: middle;
+}
+
+.shadow {
+  box-shadow: $shadow-color 0 0 10px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.table-container {
+  width   : 100%;
+  overflow: auto;
+}
