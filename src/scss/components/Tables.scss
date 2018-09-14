@@ -1,0 +1,55 @@
+@import "../Variables.scss";
+
+.table-container {
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    padding: 15px;
+    tr {
+      opacity: 0.95;
+      &:hover {
+        opacity: 1;
+        background-color: $table-tr-hover;
+      }
+    }
+    thead {
+      font-weight: bold;
+      text-align: left;
+      background: $table-thead;
+      color: $table-thead-text;
+      tr:hover {
+        background-color: inherit;
+      }
+    }
+    th,
+    td {
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    &.stript {
+      thead tr {
+        border-bottom: none;
+      }
+
+      tbody tr {
+        border-bottom: solid 1px $table-border;
+      }
+    }
+    &.bordered {
+      border: solid 1px $table-border;
+      thead th {
+        border: solid 1px $table-border;
+      }
+      tbody td {
+        border: solid 1px $table-border;
+      }
+    }
+  }
+}
