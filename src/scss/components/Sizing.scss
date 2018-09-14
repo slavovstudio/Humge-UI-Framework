@@ -1,20 +1,20 @@
 @for $i from 1 through 200 {
   .w#{$i*5} {
-    width: #{$i*5}px;
+    width: #{$i * 5}px;
   }
 }
 @for $s from 1 through 200 {
   .h#{$s*5} {
-    height: #{$s*5}px;
+    height: #{$s * 5}px;
   }
 }
 @for $w from 1 through 20 {
   .w#{$w*5}p {
-    width: #{$w*5%};
+    width: #{$w * 5%};
   }
 }
 @for $h from 1 through 20 {
   .h#{$h*5}p {
-    height: #{$h*5%};
+    height: #{$h * 5%};
   }
 }

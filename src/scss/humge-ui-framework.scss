@@ -11,30 +11,33 @@
 @import "components/Pagination.scss";
 @import "components/Accordion.scss";
 @import "components/Galleries.scss";
-@import "https://fonts.googleapis.com/css?family=Roboto:100, 100i, 300, 300i, 400, 400i, 500, 500i, 700, 700i&subset=cyrillic-ext;";
 
 * {
-  -moz-box-sizing   : border-box;
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing        : border-box;
-  text-rendering    : optimizelegibility;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
 }
 
 body,
 html {
-  width      : 100%;
-  height     : 100%;
-  font-family: 'Roboto',sans-serif;
+  width: 100%;
+  height: 100%;
+  font: {
+    family: $project-font-family;
+    weight: $project-font-width;
+    size: $project-font-size;
+  }
 }
 
 .wraper {
   max-width: $wraper-max;
   min-width: $wraper-min;
-  width    : $wraper;
+  width: $wraper;
 }
 
 img {
-  max-width     : 100%;
+  max-width: 100%;
   vertical-align: middle;
 }
 
@@ -45,3 +48,5 @@ img {
 a {
   color: inherit;
 }
+
+@import "components/Dashboard.scss";

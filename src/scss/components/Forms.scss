@@ -2,33 +2,33 @@
 @import "Base64.scss";
 @mixin after-icon {
   position: absolute;
-  right   : 5px;
-  top     : 10px;
-  width   : 20px;
+  right: 5px;
+  top: 10px;
+  width: 20px;
 }
 @mixin radio-checkbox-status {
   position: absolute;
-  left    : 10px;
-  top     : 10px;
-  width   : 15px;
-  z-index : -1;
-  cursor  : pointer;
+  left: 10px;
+  top: 10px;
+  width: 15px;
+  z-index: -1;
+  cursor: pointer;
 }
 
 .control {
-  position        : relative;
-  overflow        : hidden;
+  position: relative;
+  overflow: hidden;
   background-color: $form-controls-background;
 
   span {
-    display         : block;
-    content         : '';
-    height          : 2px;
+    display: block;
+    content: "";
+    height: 2px;
     background-color: $form-control-focus-line;
-    left            : 50%;
-    right           : 50%;
-    bottom          : 0;
-    position        : absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    position: absolute;
     @include transition;
   }
 
@@ -41,58 +41,58 @@
   input:focus ~ span,
   select:focus ~ span,
   textarea:focus ~ span {
-    left : 0;
+    left: 0;
     right: 0;
     @include transition;
   }
 
-  & input[type=radio],
-  input[type=checkbox] {
-    width  : auto!important;
+  & input[type="radio"],
+  input[type="checkbox"] {
+    width: auto !important;
     display: inline-block;
   }
 
-  input[type=color],
-  input[type=date],
-  input[type=datetime-local],
-  input[type=datetime],
-  input[type=email],
-  input[type=month],
-  input[type=number],
-  input[type=password],
-  input[type=search],
-  input[type=tel],
-  input[type=text],
-  input[type=time],
-  input[type=url],
-  input[type=week],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
   textarea {
-    width        : 100%;
-    border       : none;
-    border-bottom: 1px solid rgba(191,191,191,1.00);
-    padding      : 10px;
-    outline      : 0;
-    height       : 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(191, 191, 191, 1);
+    padding: 10px;
+    outline: 0;
+    height: 40px;
   }
 
   &.select {
     select {
-      position        : relative;
-      width           : calc(100% + 20px);
-      border          : 0;
-      border-bottom   : 1px solid rgba(191,191,191,1.00);
-      padding         : 10px;
+      position: relative;
+      width: calc(100% + 20px);
+      border: 0;
+      border-bottom: 1px solid rgba(191, 191, 191, 1);
+      padding: 10px;
       background-color: transparent;
-      z-index         : 6;
-      cursor          : pointer;
-      outline         : 0;
-      height          : 40px;
-      padding-right   : 40px;
+      z-index: 6;
+      cursor: pointer;
+      outline: 0;
+      height: 40px;
+      padding-right: 40px;
     }
 
     select > option:checked,
     select > option:hover {
-      box-shadow: rgba(191,191,191,1.00) 0 0 10px 100px inset;
+      box-shadow: rgba(191, 191, 191, 1) 0 0 10px 100px inset;
     }
 
     select option {
@@ -100,13 +100,13 @@
     }
 
     &:before {
-      content : $select-arrow;
+      content: $select-arrow;
       position: absolute;
-      right   : 5px;
-      top     : 10px;
-      width   : 20px;
-      z-index : 5;
-      cursor  : pointer;
+      right: 5px;
+      top: 10px;
+      width: 20px;
+      z-index: 5;
+      cursor: pointer;
     }
   }
 
@@ -114,7 +114,7 @@
   &.email input,
   &.password input,
   &.user input {
-    padding-right: 30px!important;
+    padding-right: 30px !important;
   }
 
   &.date:after {
@@ -139,41 +139,41 @@
 
   .checkright {
     position: absolute;
-    top     : 10px;
-    right   : 30px;
-    width   : 0;
+    top: 10px;
+    right: 30px;
+    width: 0;
   }
 }
 /*Swith*/
 
 .switch {
-  input[type=checkbox] {
-    height : 0;
-    width  : 0;
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
     display: none;
   }
 
   label {
-    cursor       : pointer;
-    text-indent  : -9999px;
-    width        : 50px;
-    height       : 25px;
-    background   : grey;
-    display      : block;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 25px;
+    background: grey;
+    display: block;
     border-radius: 100px;
-    position     : relative;
-    margin       : 0 auto;
+    position: relative;
+    margin: 0 auto;
 
     &:after {
-      content      : '';
-      position     : absolute;
-      top          : 3px;
-      left         : 2px;
-      width        : 20px;
-      height       : 20px;
-      background   : #fff;
+      content: "";
+      position: absolute;
+      top: 2.5px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
       border-radius: 45px;
-      transition   : 0.3s;
+      transition: 0.3s;
     }
 
     &:active:after {
@@ -188,29 +188,29 @@
   }
 
   input:checked + label:after {
-    left     : calc(100% - 2px);
+    left: calc(100% - 2px);
     transform: translateX(-100%);
   }
 }
 
 label {
   &.checkbox {
-    padding : 5px;
+    padding: 5px;
     position: relative;
-    cursor  : pointer;
-    width   : 100%;
-    display : block;
+    cursor: pointer;
+    width: 100%;
+    display: block;
     overflow: hidden;
-    z-index : 1;
+    z-index: 1;
 
-    input[type=checkbox] {
-      opacity : 0;
+    input[type="checkbox"] {
+      opacity: 0;
       position: absolute;
-      width   : 100%!important;
-      height  : 100%;
-      cursor  : pointer;
-      top     : 0;
-      left    : 0;
+      width: 100% !important;
+      height: 100%;
+      cursor: pointer;
+      top: 0;
+      left: 0;
     }
 
     &.checked:after {
@@ -219,49 +219,49 @@ label {
     }
 
     .marker {
-      vertical-align  : middle;
-      width           : 25px;
-      height          : 25px;
-      border          : solid 1px #ACACAC;
-      display         : inline-block;
-      margin-right    : 5px;
-      position        : relative;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      border: solid 1px #acacac;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
       background-color: $form-controls-background;
-      z-index         : -2;
+      z-index: -2;
     }
 
     a {
       position: relative;
-      z-index : 30;
+      z-index: 30;
     }
   }
 
   &.radio {
-    padding : 5px;
+    padding: 5px;
     position: relative;
-    cursor  : pointer;
-    width   : 100%;
-    display : block;
-    z-index : 1;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    z-index: 1;
 
-    input[type=radio] {
-      opacity : 0;
+    input[type="radio"] {
+      opacity: 0;
       position: absolute;
-      width   : 100%!important;
-      height  : 100%;
-      cursor  : pointer;
+      width: 100% !important;
+      height: 100%;
+      cursor: pointer;
     }
 
-    .market {
-      vertical-align  : middle;
-      width           : 25px;
-      height          : 25px;
-      border          : solid 1px #ACACAC;
-      display         : inline-block;
-      margin-right    : 5px;
-      position        : relative;
+    .marker {
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      border: solid 1px #acacac;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
       background-color: $form-controls-background;
-      z-index         : -2;
+      z-index: -2;
     }
 
     &.checked:after {

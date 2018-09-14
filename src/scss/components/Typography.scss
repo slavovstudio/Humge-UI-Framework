@@ -79,6 +79,6 @@ $f: 3;
 }
 @for $lh from 1 through 50 {
   .lh#{$lh*5} {
-    line-height: #{$lh*5}px;
+    line-height: #{$lh * 5}px;
   }
 }

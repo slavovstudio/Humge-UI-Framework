@@ -1,3 +1,7 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:100, 100i, 300, 300i, 400, 400i, 500, 500i, 700, 700i&subset=cyrillic-ext;";
+$project-font-family: "Roboto", sans-serif;
+$project-font-size: 14px;
+$project-font-width: 100;
 $wraper-max: 1440px;
 $wraper-min: 960px;
 $wraper: 80%;
@@ -20,15 +24,26 @@ $tabs-text: #000;
 $tabs-current: #dedede;
 $tabs-text-current: #000;
 $tabs-content: #fff;
-$shadow-color: rgba(0,0,0,0.20);
+$shadow-color: rgba(0, 0, 0, 0.2);
 $slider-dots: #ffffff;
 $slider-dots-active: #f60000;
 $slider-loadbar: #ff0000;
 $slider-img-info: rgba(0, 0, 0, 0.37);
 $slider-img-info-text: #fff;
+
+/*only for Variables for Dashboard */
+
+$menu-call-color: #000;
+$dashboard-navbar-width: 250px;
+$dashboard-navigation: #3a59a4;
+$dashboard-navigation-text: #fff;
+$dashboard-navigation-hover: #cc2b12;
+$dashboard-header: #fff;
+$dashboard-header-tool-icon-hover: #cc2b12;
+
 @mixin transition {
-  -o-transition     : all 0.3s ease;
-  -moz-transition   : all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
-  transition        : all 0.3s ease;
+  transition: all 0.3s ease;
 }

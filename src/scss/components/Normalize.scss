@@ -4,19 +4,19 @@ $font_0: monospace; //@extend-elements
 //sub, sup
 
 %extend_1 {
-	font-size     : 75%;
-	line-height   : 0;
-	position      : relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 //original selectors
 //button, input, optgroup, select, textarea
 
 %extend_2 {
-	font-family: inherit;
-	font-size  : 100%;
-	line-height: 1.15;
-	margin     : 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 a,
@@ -108,207 +108,203 @@ ul,
 var,
 video,
 xmp {
-	border : 0;
-	margin : 0;
-	padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-	line-height: 1.15;
+  line-height: 1.15;
 }
 
 body {
-	margin: 0;
-}
-
-h1 {
-	font-size: 2em;
-	margin   : 0.67em 0;
+  margin: 0;
 }
 
 hr {
-	//Instead of the line below you could use @include box-sizing($bs)
-	box-sizing: content-box;
-	height    : 0;
-	overflow  : visible;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
 pre {
-	font-family: $font_0, $font_0;
-	font-size  : 1em;
+  font-family: $font_0, $font_0;
+  font-size: 1em;
 }
 
 a {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 abbr[title] {
-	border-bottom  : none;
-	text-decoration: underline dotted;
+  border-bottom: none;
+  text-decoration: underline dotted;
 }
 
 b {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 
 strong {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 
 code {
-	font-family: $font_0, $font_0;
-	font-size  : 1em;
+  font-family: $font_0, $font_0;
+  font-size: 1em;
 }
 
 kbd {
-	font-family: $font_0, $font_0;
-	font-size  : 1em;
+  font-family: $font_0, $font_0;
+  font-size: 1em;
 }
 
 samp {
-	font-family: $font_0, $font_0;
-	font-size  : 1em;
+  font-family: $font_0, $font_0;
+  font-size: 1em;
 }
 
 small {
-	font-size: 80%;
+  font-size: 80%;
 }
 
 sub {
-	@extend %extend_1;
-	bottom: -0.25em;
+  @extend %extend_1;
+  bottom: -0.25em;
 }
 
 sup {
-	@extend %extend_1;
-	top: -0.5em;
+  @extend %extend_1;
+  top: -0.5em;
 }
 
 img {
-	border-style: none;
+  border-style: none;
 }
 
 button {
-	@extend %extend_2;
-	overflow      : visible;
-	text-transform: none;
+  @extend %extend_2;
+  overflow: visible;
+  text-transform: none;
 
-	&:-moz-focusring {
-		outline: 1px dotted ButtonText;
-	}
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
 }
 
 input {
-	@extend %extend_2;
-	overflow: visible;
+  @extend %extend_2;
+  overflow: visible;
 }
 
 optgroup {
-	@extend %extend_2;
+  @extend %extend_2;
 }
 
 select {
-	@extend %extend_2;
-	text-transform: none;
+  @extend %extend_2;
+  text-transform: none;
 }
 
 textarea {
-	@extend %extend_2;
-	overflow: auto;
+  @extend %extend_2;
+  overflow: auto;
 }
 
 button::-moz-focus-inner {
-	border-style: none;
-	padding     : 0;
+  border-style: none;
+  padding: 0;
 }
 
 [type="button"]::-moz-focus-inner {
-	border-style: none;
-	padding     : 0;
+  border-style: none;
+  padding: 0;
 }
 
 [type="reset"]::-moz-focus-inner {
-	border-style: none;
-	padding     : 0;
+  border-style: none;
+  padding: 0;
 }
 
 [type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding     : 0;
+  border-style: none;
+  padding: 0;
 }
 
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 legend {
-	//Instead of the line below you could use @include box-sizing($bs)
-	box-sizing : border-box;
-	color      : inherit;
-	display    : table;
-	max-width  : 100%;
-	padding    : 0;
-	white-space: normal;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
 
 progress {
-	vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 [type="checkbox"] {
-	//Instead of the line below you could use @include box-sizing($bs)
-	box-sizing: border-box;
-	padding   : 0;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
 }
 
 [type="radio"] {
-	//Instead of the line below you could use @include box-sizing($bs)
-	box-sizing: border-box;
-	padding   : 0;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
 }
 
 [type="number"]::-webkit-inner-spin-button {
-	height: auto;
+  height: auto;
 }
 
 [type="number"]::-webkit-outer-spin-button {
-	height: auto;
+  height: auto;
 }
 
 [type="search"] {
-	outline-offset: -2px;
+  outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-decoration {}
+[type="search"]::-webkit-search-decoration {
+}
 
 ::-webkit-file-upload-button {
-	font: inherit;
+  font: inherit;
 }
 
 details {
-	display: block;
+  display: block;
 }
 
 summary {
-	display: list-item;
+  display: list-item;
 }
 
 template {
-	display: none;
+  display: none;
 }
 
 [hidden] {
-	display: none;
+  display: none;
 }
 
 [type="button"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 
 [type="reset"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 
 [type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
