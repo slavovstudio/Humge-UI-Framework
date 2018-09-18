@@ -7,7 +7,7 @@ ul {
     list-style: none;
 
     li {
-      background: none;
+      background: $tabs;
       color: $tabs-text;
       display: inline-block;
       padding: 10px 15px;

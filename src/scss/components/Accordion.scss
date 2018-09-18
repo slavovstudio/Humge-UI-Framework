@@ -8,6 +8,7 @@ dl[humge-type="accordion"] {
     background-color: $accordion-dt;
     padding: 10px 20px;
     cursor: pointer;
+    color: $accordion-dt-text;
 
     &.active {
       background-color: $accordion-dt-active;
@@ -18,6 +19,11 @@ dl[humge-type="accordion"] {
     display: block;
     background-color: $accordion-dd;
     overflow: hidden;
+
+    .accordText {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 
     &.open {
       display: block;
