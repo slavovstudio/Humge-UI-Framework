@@ -14,8 +14,7 @@
   z-index: -1;
   cursor: pointer;
 }
-
-*[placeholder] {
+input:not([placeholder=""]) {
   padding-top: 5px !important;
   ~ label {
     display: none;
@@ -53,6 +52,11 @@
       top: 0;
       left: 0;
       @include transition;
+    }
+    &:not(:placeholder-shown) + label {
+      font-size: 0.8em;
+      top: 0;
+      left: 0;
     }
     &[disabled] {
       background: $form-controls-disabled;
