@@ -1,5 +1,4 @@
 @import "../Variables.scss";
-
 .button,
 button,
 input[type="button"],
@@ -13,6 +12,8 @@ input[type="submit"] {
   background: $buttons-color;
   color: $buttons-text;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 
   &.button-small {
     padding: 5px 10px;
@@ -24,6 +25,33 @@ input[type="submit"] {
 
   &.action {
     background: $button-action;
+  }
+  &:before {
+    background: #fff;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 200%;
+    bottom: -50%;
+    left: -50%;
+    border-radius: 100%;
+    opacity: 0;
+    @include transition;
+  }
+  &:active:before {
+    transform: scale(2);
+    left: 0;
+    bottom: 0;
+    opacity: 0.4;
+    @include transition;
+  }
+
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:before {
+      display: none;
+    }
   }
 }
 
@@ -38,6 +66,7 @@ input[type="submit"] {
   text-align: center;
   position: relative;
   background: $buttons-color;
+  overflow: unset !important;
 
   &.fixed {
     position: fixed;

@@ -8,18 +8,63 @@
 }
 @mixin radio-checkbox-status {
   position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 15px;
+  left: 5px;
+  top: 5px;
+  width: 17px;
   z-index: -1;
   cursor: pointer;
 }
-
-.control {
+input:not([placeholder=""]) {
+  padding-top: 5px !important;
+  ~ label {
+    display: none;
+  }
+}
+[humge-type="text"],
+[humge-type="password"],
+[humge-type="textarea"],
+[humge-type="date"],
+[humge-type="email"],
+[humge-type="user"] {
   position: relative;
-  overflow: hidden;
   background-color: $form-controls-background;
-
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(191, 191, 191, 1);
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    outline: 0;
+    height: 40px;
+    background: transparent;
+    z-index: 5;
+    position: relative;
+    &:focus ~ span {
+      left: 0;
+      right: 0;
+      @include transition;
+    }
+    &:focus + label {
+      font-size: 0.8em;
+      top: 0;
+      left: 0;
+      @include transition;
+    }
+    &:not(:placeholder-shown) + label {
+      font-size: 0.8em;
+      top: 0;
+      left: 0;
+    }
+    &[disabled] {
+      background: $form-controls-disabled;
+      opacity: 0.8;
+      cursor: not-allowed;
+      border-radius: 3px;
+    }
+  }
   span {
     display: block;
     content: "";
@@ -30,243 +75,201 @@
     bottom: 0;
     position: absolute;
     @include transition;
+    z-index: 6;
   }
-
-  input:focus,
-  select:focus,
-  textarea:focus {
-    border-bottom: inherit;
-  }
-
-  input:focus ~ span,
-  select:focus ~ span,
-  textarea:focus ~ span {
-    left: 0;
-    right: 0;
-    @include transition;
-  }
-
-  & input[type="radio"],
-  input[type="checkbox"] {
-    width: auto !important;
-    display: inline-block;
-  }
-
-  input[type="color"],
-  input[type="date"],
-  input[type="datetime-local"],
-  input[type="datetime"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"],
-  textarea {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid rgba(191, 191, 191, 1);
-    padding: 10px;
-    outline: 0;
-    height: 40px;
-  }
-
-  &.select {
-    select {
-      position: relative;
-      width: calc(100% + 20px);
-      border: 0;
-      border-bottom: 1px solid rgba(191, 191, 191, 1);
-      padding: 10px;
-      background-color: transparent;
-      z-index: 6;
-      cursor: pointer;
-      outline: 0;
-      height: 40px;
-      padding-right: 40px;
-    }
-
-    select > option:checked,
-    select > option:hover {
-      box-shadow: rgba(191, 191, 191, 1) 0 0 10px 100px inset;
-    }
-
-    select option {
-      padding: 5px;
-    }
-
-    &:before {
-      content: $select-arrow;
-      position: absolute;
-      right: 5px;
-      top: 10px;
-      width: 20px;
-      z-index: 5;
-      cursor: pointer;
-    }
-  }
-
-  &.date input,
-  &.email input,
-  &.password input,
-  &.user input {
-    padding-right: 30px !important;
-  }
-
-  &.date:after {
-    content: $calendar;
-    @include after-icon;
-  }
-
-  &.email:after {
-    content: $at;
-    @include after-icon;
-  }
-
-  &.user:after {
-    content: $user;
-    @include after-icon;
-  }
-
-  &.password:after {
-    content: $password;
-    @include after-icon;
-  }
-
-  .checkright {
+  label {
     position: absolute;
     top: 10px;
-    right: 30px;
-    width: 0;
+    left: 0;
+    font-weight: $project-font-width;
+    z-index: 4;
+    @include transition;
+    &:before {
+      display: none;
+    }
   }
 }
+[humge-type="password"],
+[humge-type="date"],
+[humge-type="email"],
+[humge-type="user"] {
+  input {
+    padding-right: 30px !important;
+  }
+}
+
+[humge-type="date"]:after {
+  content: $calendar;
+  @include after-icon;
+}
+
+[humge-type="email"]:after {
+  content: $at;
+  @include after-icon;
+}
+
+[humge-type="user"]:after {
+  content: $user;
+  @include after-icon;
+}
+
+[humge-type="password"]:after {
+  content: $password;
+  @include after-icon;
+}
+
+[humge-type="select"] {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  select {
+    position: relative;
+    width: calc(100% + 20px);
+    border: 0;
+    border-bottom: 1px solid rgba(191, 191, 191, 1);
+    padding: 10px;
+    background-color: transparent;
+    z-index: 6;
+    cursor: pointer;
+    outline: 0;
+    height: 40px;
+    padding-right: 40px;
+    &[disabled] {
+      background: $form-controls-disabled;
+      opacity: 0.8;
+      cursor: not-allowed;
+      border-radius: 3px;
+    }
+  }
+
+  select > option:checked,
+  select > option:hover {
+    box-shadow: rgba(191, 191, 191, 1) 0 0 10px 100px inset;
+  }
+
+  select option {
+    padding: 5px;
+  }
+
+  &:after {
+    content: $select-arrow;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 20px;
+    z-index: 5;
+    cursor: pointer;
+  }
+}
+
 /*Swith*/
 
-.switch {
-  input[type="checkbox"] {
-    height: 0;
-    width: 0;
+[humge-type="switch"] {
+  [type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+
+    &:checked + span {
+      background: $button-action;
+    }
+    &:checked + span:after {
+      left: calc(100% - 2px);
+      transform: translateX(-100%);
+      z-index: 1 !important;
+      top: 2.5px;
+      width: 20px;
+    }
+    &:active + span:after {
+      width: 32px;
+    }
+    &[disabled] + span {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+
+  &:before {
     display: none;
   }
 
-  label {
+  span {
     cursor: pointer;
     text-indent: -9999px;
     width: 50px;
     height: 25px;
-    background: grey;
+    background: $buttons-color;
     display: block;
     border-radius: 100px;
     position: relative;
     margin: 0 auto;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 2.5px;
-      left: 2px;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      border-radius: 45px;
-      transition: 0.3s;
-    }
-
-    &:active:after {
-      width: 32px;
-    }
   }
 
-  input {
-    &:checked + label {
-      background: #bada55;
-    }
-  }
-
-  input:checked + label:after {
-    left: calc(100% - 2px);
-    transform: translateX(-100%);
+  span:after {
+    content: "";
+    position: absolute;
+    top: 2.5px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 45px;
+    transition: 0.3s;
   }
 }
-
+/* radio & checkbox */
 label {
-  &.checkbox {
-    padding: 5px;
-    position: relative;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 5px;
+
+  [type="checkbox"],
+  [type="radio"] {
+    &[disabled] {
+      cursor: not-allowed;
+    }
+    opacity: 0;
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
     cursor: pointer;
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    z-index: 1;
-
-    input[type="checkbox"] {
-      opacity: 0;
-      position: absolute;
-      width: 100% !important;
-      height: 100%;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-    }
-
-    &.checked:after {
-      content: $checked;
-      @include radio-checkbox-status;
-    }
-
-    .marker {
-      vertical-align: middle;
-      width: 25px;
-      height: 25px;
-      border: solid 1px #acacac;
-      display: inline-block;
-      margin-right: 5px;
-      position: relative;
-      background-color: $form-controls-background;
-      z-index: -2;
-    }
-
-    a {
-      position: relative;
-      z-index: 30;
-    }
+    top: 0;
+    left: 0;
   }
 
-  &.radio {
-    padding: 5px;
+  &:before {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border: solid 1px #acacac;
+    display: inline-block;
+    margin-right: 5px;
     position: relative;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-    z-index: 1;
+    background-color: $form-controls-background;
+    z-index: -2;
+    content: "";
+  }
 
-    input[type="radio"] {
-      opacity: 0;
-      position: absolute;
-      width: 100% !important;
-      height: 100%;
-      cursor: pointer;
-    }
+  [type="checkbox"]:checked + span:after {
+    content: $checked;
+    @include radio-checkbox-status;
+  }
 
-    .marker {
-      vertical-align: middle;
-      width: 25px;
-      height: 25px;
-      border: solid 1px #acacac;
-      display: inline-block;
-      margin-right: 5px;
-      position: relative;
-      background-color: $form-controls-background;
-      z-index: -2;
-    }
+  [type="radio"]:checked + span:after {
+    content: $radio-dot;
+    @include radio-checkbox-status;
+  }
 
-    &.checked:after {
-      content: $radio-dot;
-      @include radio-checkbox-status;
-    }
+  a {
+    position: relative;
+    z-index: 30;
   }
 }
