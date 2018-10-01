@@ -68,6 +68,10 @@ input[type="submit"] {
   background: $buttons-color;
   overflow: unset !important;
 
+  &:before {
+    display: none !important;
+  }
+
   &.fixed {
     position: fixed;
     bottom: 20px;
