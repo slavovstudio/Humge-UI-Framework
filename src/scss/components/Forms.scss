@@ -3,7 +3,7 @@
 @mixin after-icon {
   position: absolute;
   right: 5px;
-  top: 10px;
+  top: 15px;
   width: 20px;
 }
 @mixin radio-checkbox-status {
@@ -14,12 +14,7 @@
   z-index: -1;
   cursor: pointer;
 }
-input:not([placeholder=""]) {
-  padding-top: 5px !important;
-  ~ label {
-    display: none;
-  }
-}
+
 [humge-type="text"],
 [humge-type="password"],
 [humge-type="textarea"],
@@ -28,6 +23,18 @@ input:not([placeholder=""]) {
 [humge-type="user"] {
   position: relative;
   background-color: $form-controls-background;
+
+  label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-weight: $project-font-width;
+    z-index: 4;
+    @include transition;
+    &:before {
+      display: none;
+    }
+  }
   input,
   textarea {
     width: 100%;
@@ -35,28 +42,41 @@ input:not([placeholder=""]) {
     border-bottom: 1px solid rgba(191, 191, 191, 1);
     padding-top: 15px;
     padding-bottom: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     outline: 0;
-    height: 40px;
+    height: 50px;
     background: transparent;
     z-index: 5;
     position: relative;
+
+    &::-ms-input-placeholder {
+      opacity: 0;
+      @include transition;
+    }
+    &::placeholder {
+      opacity: 0;
+      @include transition;
+    }
+    &:focus::-ms-input-placeholder {
+      opacity: 0.6;
+      @include transition;
+    }
+    &:focus::placeholder {
+      opacity: 0.6;
+      @include transition;
+    }
     &:focus ~ span {
       left: 0;
       right: 0;
       @include transition;
     }
+    &:not(:placeholder-shown) + label,
     &:focus + label {
       font-size: 0.8em;
-      top: 0;
-      left: 0;
+      top: 3px;
+      left: 5px;
       @include transition;
-    }
-    &:not(:placeholder-shown) + label {
-      font-size: 0.8em;
-      top: 0;
-      left: 0;
     }
     &[disabled] {
       background: $form-controls-disabled;
@@ -64,6 +84,16 @@ input:not([placeholder=""]) {
       cursor: not-allowed;
       border-radius: 3px;
     }
+    &:focus:not(:valid) ~ span {
+      background: $form-contorl-required;
+    }
+    &:required {
+      box-shadow: none;
+    }
+  }
+  textarea {
+    height: inherit;
+    padding-top: 20px;
   }
   span {
     display: block;
@@ -76,17 +106,6 @@ input:not([placeholder=""]) {
     position: absolute;
     @include transition;
     z-index: 6;
-  }
-  label {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    font-weight: $project-font-width;
-    z-index: 4;
-    @include transition;
-    &:before {
-      display: none;
-    }
   }
 }
 [humge-type="password"],
@@ -124,15 +143,18 @@ input:not([placeholder=""]) {
   overflow: hidden;
   select {
     position: relative;
-    width: calc(100% + 20px);
+    width: 120%;
     border: 0;
     border-bottom: 1px solid rgba(191, 191, 191, 1);
-    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     background-color: transparent;
     z-index: 6;
     cursor: pointer;
     outline: 0;
-    height: 40px;
+    height: 50px;
     padding-right: 40px;
     &[disabled] {
       background: $form-controls-disabled;
@@ -140,6 +162,41 @@ input:not([placeholder=""]) {
       cursor: not-allowed;
       border-radius: 3px;
     }
+    &:focus ~ span {
+      left: 0;
+      right: 0;
+      @include transition;
+    }
+    &:focus + label {
+      font-size: 0.8em;
+      top: 3px;
+      left: 5px;
+      @include transition;
+    }
+    &:not(:placeholder-shown) + label {
+      font-size: 0.8em;
+      top: 3px;
+      left: 5px;
+    }
+    &[disabled] {
+      background: $form-controls-disabled;
+      opacity: 0.8;
+      cursor: not-allowed;
+      border-radius: 3px;
+    }
+  }
+
+  span {
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: $form-control-focus-line;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    position: absolute;
+    @include transition;
+    z-index: 6;
   }
 
   select > option:checked,
@@ -159,6 +216,18 @@ input:not([placeholder=""]) {
     width: 20px;
     z-index: 5;
     cursor: pointer;
+  }
+  label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-weight: $project-font-width;
+    z-index: 4;
+    @include transition;
+
+    &:before {
+      display: none;
+    }
   }
 }
 
